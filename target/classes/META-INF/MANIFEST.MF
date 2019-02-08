@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: sdi202-lab-spring
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ediaz
+Implementation-Vendor-Id: com.uniovi
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/sdi202-lab-spring
+Created-By: Maven Integration for Eclipse
+
