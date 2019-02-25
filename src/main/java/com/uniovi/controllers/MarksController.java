@@ -31,11 +31,15 @@ public class MarksController {
 	private HttpSession httpSession;
 
 	@RequestMapping("/mark/list")
-	public String getList(Model model) {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String dni = auth.getName(); // DNI es el name de la autenticación
+	public String getList(Model model, Principal principal,
+			@RequestParam(value = "", required = false) String searchText) {
+		String dni = principal.getName(); // DNI es el name de la autenticación
 		User user = usersService.getUserByDni(dni);
-		model.addAttribute("markList", marksService.getMarksForUser(user));
+		if (searchText != null && !searchText.isEmpty()) {
+			model.addAttribute("markList", marksService.searchMarksByDescriptionAndNameForUser(searchText, user));
+		} else {
+			model.addAttribute("markList", marksService.getMarksForUser(user));
+		}
 		return "mark/list";
 	}
 
