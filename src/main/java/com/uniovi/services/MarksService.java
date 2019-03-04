@@ -69,6 +69,10 @@ public class MarksService {
 		if (user.getRole().equals("ROLE_PROFESSOR")) {
 			marks = getMarks(pageable);
 		}
+		
+		else {
+			marks = getMarks(pageable);
+		}
 		return marks;
 	}
 
