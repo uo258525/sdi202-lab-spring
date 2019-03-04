@@ -12,7 +12,7 @@ public class PO_Properties {
 	public static int getSPANISH() {
 		return SPANISH;
 	}
-
+static Properties p = new Properties();
 	public static int getENGLISH() {
 		return ENGLISH;
 	}
